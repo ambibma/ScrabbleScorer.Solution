@@ -34,7 +34,7 @@ namespace Scoring.Models
     };
     public static int ToPoints(string word)
     {
-      return 0;
+      return _letterScores[char.Parse(word)];      
     }
   }
 }
