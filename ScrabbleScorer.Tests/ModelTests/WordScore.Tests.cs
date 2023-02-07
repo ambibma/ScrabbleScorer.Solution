@@ -9,7 +9,7 @@ namespace Scoring.Tests
   public class ScoreTests
   {
     [TestMethod]
-    public void ToPoints_ReturnsPoints_Int()
+    public void ToPoints_ReturnsPointsFromOneLetter_Int()
     {
       //arrange
       string word = "A";
@@ -17,6 +17,16 @@ namespace Scoring.Tests
       int result = WordScore.ToPoints(word);
       //assert
       Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void ToPoints_ReturnsPointsFromTwoLetters_Int()
+    {
+      //arrange
+      string word = "AT";
+      //act
+      int result = WordScore.ToPoints(word);
+      //assert
+      Assert.AreEqual(2, result);
     }
   }
 }
