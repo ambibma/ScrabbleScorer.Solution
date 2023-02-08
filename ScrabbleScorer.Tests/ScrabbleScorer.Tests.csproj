@@ -13,8 +13,8 @@
     <ProjectReference Include="..\ScrabbleScorer\ScrabbleScorer.csproj"/>
   </ItemGroup>
 
-<ItemGroup>
-  <Content Include="..\ScrabbleScorer\Assets\CollinsScrabbleWords(2019).txt" Link="Assets\CollinsScrabbleWords(2019).txt" CopyToOutputDirectory="PreserveNewest" />
-</ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ScrabbleScorer\Assets\CollinsScrabbleWords(2019).txt" Link="Assets\CollinsScrabbleWords(2019).txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 
 </Project>
