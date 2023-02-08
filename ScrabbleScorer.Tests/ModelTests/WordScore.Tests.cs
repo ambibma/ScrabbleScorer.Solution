@@ -29,13 +29,18 @@ namespace Scoring.Tests
       Assert.AreEqual(2, result);
     }
     [TestMethod]
-    public void ToPoints_RecievesLowerCase_Int()
+    public void ToPoints_ReceivesLowerCase_Int()
     {
       string word = "a";
       int result = WordScore.ToPoints(word);
       Assert.AreEqual(1, result);
-
-
+    }
+    [TestMethod]
+    public void ToPoints_ThrowsErrorForNotABC_Int()
+    {
+      string word = "!";
+      int result = WordScore.ToPoints(word);
+      Assert.AreEqual(0, result);
     }
   }
 }

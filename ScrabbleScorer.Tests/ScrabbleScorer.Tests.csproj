@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ScrabbleScorer\ScrabbleScorer.csproj" />  
+    <ProjectReference Include="..\ScrabbleScorer\ScrabbleScorer.csproj"/>
+    <Content Include="..\ScrabbleScorer\Assets\CollinsScrabbleWords(2019).txt"/>
   </ItemGroup>
-
 </Project>

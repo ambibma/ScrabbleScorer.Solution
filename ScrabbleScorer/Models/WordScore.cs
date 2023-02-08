@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Globalization;
-
-
+using System.IO;
+using System;
 
 
 namespace Scoring.Models
@@ -37,10 +36,32 @@ namespace Scoring.Models
       {'Q', 10},
       {'Z', 10},
     };
+    private static HashSet<string> HellSpawnDaemonWords = new HashSet<string>(File.ReadAllLines(@"Assets/CollinsScrabbleWords(2019).txt"));
     public static int ToPoints(string word)
     {
-      char[] chars = word.ToUpper().ToCharArray();
-      return chars.Select(c => _letterScores[c]).Sum();
+      string upperCaseWord = word.ToUpper();
+      char[] chars = upperCaseWord.ToCharArray();
+      try
+      {
+        return chars.Select(c => _letterScores[c]).Sum();
+      }
+      catch (KeyNotFoundException)
+      {
+        return 0;
+      }
+    }
+    public static Boolean IsValidWord(string word)
+    {
+      return HellSpawnDaemonWords.Contains(word);
+    }
+    public static int ValidateAndScore(string word)
+    {
+      string upperCaseWord = word.ToUpper();
+      if (IsValidWord(upperCaseWord))
+      {
+        return ToPoints(upperCaseWord);
+      }
+      return 0;
     }
   }
 }
