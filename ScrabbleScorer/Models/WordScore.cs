@@ -1,5 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
+
+
+
 
 namespace Scoring.Models
 {
@@ -35,7 +39,7 @@ namespace Scoring.Models
     };
     public static int ToPoints(string word)
     {
-      char[] chars = word.ToCharArray();
+      char[] chars = word.ToUpper().ToCharArray();
       return chars.Select(c => _letterScores[c]).Sum();
     }
   }
